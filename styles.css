@@ -4,15 +4,20 @@
     box-sizing: border-box;
 }
 
-body {
-    background: linear-gradient(120deg, #4d194d, #272640);
+body.index-body, body.game-body {
+    background: linear-gradient(120deg, #4d194d, #3e1f47, #272640);
     width: 100%;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
 }
 
-#home-wrapper {
+body.game-body {
+    background: linear-gradient(120deg, #250902, #800f2f, #a4133c);
+}
+
+
+#home-wrapper, #game-wrapper {
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -27,10 +32,11 @@ a {
     color: #fff;
 }
 
+ul {
+    list-style: none;
+}
+
 .container {
-    /* background: #0f050886; */
-    /* background-color: #212f45f6; */
-    /* background: #; */
     max-width: 1120px;
     margin: 2rem auto;
     display: flex;
