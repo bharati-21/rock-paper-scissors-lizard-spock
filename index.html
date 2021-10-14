@@ -5,24 +5,64 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300;400;500&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="styles.css">
+        
         <title>Rock Paper Scissors Lizard Spock</title>
+
+        <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+
+
     </head>
     <body class="index-body">
-        <div id="home-wrapper">
-            <div class="container">
+        <main id="home-wrapper">
+            <section class="game-intro container">
                 <h1 class="hero">Rock Paper Scissors Lizard Spock</h1>
-                <p class="lead">All hail Sam Kass!</p>
 
                 <div class="tenor-gif-embed" data-postid="14859572" data-share-method="host" data-width="100%" data-aspect-ratio="1.7785714285714287">
                     <a href="https://tenor.com/view/tv-shows-the-big-bang-theory-tbbt-rock-paper-scissor-lizard-spock-rock-gif-14859572">Tv Shows The Big Bang Theory GIF</a> from <a href="https://tenor.com/search/tvshows-gifs">Tvshows GIFs</a>
                 </div>
                 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-                <a href="game.html" class="btn btn-secondary play">Play R.P.S.L.S</a>
-            </div>
-
-            
-        </div>
+                <p><i class="fas fa-play"></i></p>
+                <a href="#game-main" class="btn btn-secondary btn-play">Play 
+                    <i class="material-icons">
+                        play_arrow
+                    </i>
+                </a>
+            </section>
+            <section class="container game-main" id="game-main">
+                <header class="score-header">
+                    <h2 class="player">You: <span class="human-score score">0</span></h2>
+                    <h2 class="player">Computer: <span class="computer-score score">0</span></h2>
+                </header>
+                <section class="game-wrapper">
+                    <article class="game-choices">
+                        <figure class="choice-wrapper" id="hand-rock">
+                            <img alt="Hand rock image" src="./assets/hand-rock.png">
+                            <figcaption>Rock</figcaption>
+                        </figure>
+                        <figure class="choice-wrapper" id="hand-paper">
+                            <img alt="Hand paper image" src="./assets/hand-paper.png">
+                            <figcaption>Paper</figcaption>
+                        </figure>
+                        <figure class="choice-wrapper" id="hand-scissor">
+                            <img alt="Hand scissor image" src="./assets/hand-scissor.png">
+                            <figcaption>Scissor</figcaption>
+                        </figure>
+                        <figure class="choice-wrapper" id="hand-lizard">
+                            <img alt="Hand lizard image" src="./assets/hand-lizard.png">
+                            <figcaption>Lizard</figcaption>
+                        </figure>
+                        <figure class="choice-wrapper" id="hand-spock">
+                            <img alt="Hand Spock image" src="./assets/hand-spock.png">
+                            <figcaption>Spock</figcaption>
+                        </figure>
+                    </article>
+                    <article class="human-choice"></article>
+                    <article class="computer-choice"></article>
+                </section>
+            </section>
+        </main>        
     </body>
 </html>
