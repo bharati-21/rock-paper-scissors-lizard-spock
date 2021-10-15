@@ -85,9 +85,12 @@ h1.hero {
     margin: 2rem auto 0 auto;
     padding: 0.5rem;
     width: 150px;
+    font-weight: bolder;
     text-align: center;
     font-size: 1.25rem;
     border-radius: 2rem;
+    outline: none;
+    border: none;
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
     -ms-border-radius: 2rem;
@@ -97,6 +100,11 @@ h1.hero {
 .btn.btn-secondary {
     background-color: var(--shadow-color);
     color: var(--other-color);
+}
+
+.btn-primary {
+    color: var(--shadow-color);
+    background-color: var(--background-color)
 }
 
 .btn-play {
@@ -121,7 +129,12 @@ h1.hero {
     background-color: #810303;
 }
 
+.game-wrapper {
+    width: 100%;
+}
+
 .score-header {
+    align-self: flex-start;
     display: flex;
     width: 100%;
     align-items: center;
@@ -141,18 +154,20 @@ h2 {
     color: var(--primary-color);
 }
 
-.game-choices {
+.game-options {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    padding: 1rem;
+    margin-top: 2rem auto;
 }
 
-.choice-wrapper {
-    margin: 0.5rem 1rem;
+.option-wrapper {
+    margin: 0.5rem;
     text-align: center;
     display: flex;
-    width: 120px;
-    height: 120px;
+    width: 7rem;
+    height: 7rem;
     background-color: rgba(0, 0, 0, 0.5);
     flex-direction: column;
     align-items: center;
@@ -171,7 +186,7 @@ h2 {
     -o-transition: all 0.3s ease-in-out;
 } 
 
-.choice-wrapper:hover {
+.option-wrapper:hover {
     cursor: pointer;
     transform: scale(0.9);
     -webkit-transform: scale(0.9);
@@ -180,7 +195,204 @@ h2 {
     -o-transform: scale(0.9);
 }
 
-.choice-wrapper img {
-    width: 70px;
-    height: 70px;
+.option-wrapper.no-pointer-events {
+    pointer-events: none;
+    background-color:rgba(99, 0, 0, 0.788);
 }
+
+.option-wrapper.current-option {
+    font-weight: 700;
+    background-color: rgba(12, 66, 113, 0.5);
+    color: var(--background-color);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+
+
+
+.option-wrapper img, .game-choice img{
+    width: 4rem;
+    height: 4rem;
+}
+
+.option-wrapper figcaption {
+    font-size: 0.9rem;
+}
+
+.game-choice {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 3rem auto 0 auto;
+}
+
+.game-choice .human-choice-wrapper {
+    width: 150px;
+}
+
+.game-choice .computer-choice-wrapper {
+    width: 150px;
+}
+
+.loading-gif {
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+.loading-gif.display-block > img {
+    animation: animateDisplay 2s infinite alternate ease-in-out;
+    -webkit-animation: animateDisplay 2s infinite alternate ease-in-out;
+}
+
+
+.loading-gif.display-block > .loading-text {
+    color: var(--other-color);
+    animation: blinkText 1s infinite alternate ease-in-out;
+    -webkit-animation: blinkText 1s infinite alternate ease-in-out;
+}
+
+.display-none {
+    display:none !important;
+}
+
+.display-block {
+    visibility: visible;
+    display: block;
+}
+
+
+@keyframes animateDisplay {
+    0% {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+}
+@keyframes blinkText {
+    0% {
+        opacity:0;
+    }
+
+    100%{
+         opacity: 1;
+         transform: scale(1.05);
+         -webkit-transform: scale(1.05);
+         -moz-transform: scale(1.05);
+         -ms-transform: scale(1.05);
+         -o-transform: scale(1.05);
+    }
+}
+
+
+.game-result {
+    margin: 3rem auto;
+    background-color: var(--shadow-color);
+    padding: 1rem;
+    color: var(--other-color);
+    text-align: center;
+    animation: animateResult 0.7s ease-in-out  infinite forwards alternate;
+    -webkit-animation: animateResult 0.7s ease-in-out  infinite forwards alternate;
+}
+
+.game-result .result-text {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.game-result .winner-text {
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-play-again {
+    cursor: pointer;
+    margin: 1rem auto;
+    display: block;
+    text-align: center;
+    border-radius: 0;
+    max-width: 200px;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.btn-play-again:hover {
+    text-shadow: 1px 1px var(--other-color);
+    transform:skew(-10deg) ;
+    -webkit-transform:skew(-10deg) ;
+    -moz-transform:skew(-10deg) ;
+    -ms-transform:skew(-10deg) ;
+    -o-transform:skew(-10deg) ;
+
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    box-shadow: 2px 2px 2px var(--other-color);
+}
+
+@keyframes animateResult {
+    0% {
+        background-color: rgba(255, 0, 0, 0.788);
+    }
+
+    100% {
+        background-color: var(--shadow-color);
+    }
+}
+
+.tournament-result {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tournament-score {
+    color: var(--primary-color);
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+    background: 
+    -webkit-linear-gradient(var(--background-color), var(--primary-color));
+    text-shadow: 2px 2px rgba(12, 66, 113, 0.5);
+
+    background: linear-gradient(var(--background-color), var(--primary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+
+}
+
+@media screen and (max-width:768px) {
+    .game-options, .game-choice {
+        justify-content: center;
+    }
+}
+

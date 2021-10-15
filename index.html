@@ -16,11 +16,11 @@
 
     </head>
     <body class="index-body">
-        <main id="home-wrapper">
+        <div id="home-wrapper">
             <section class="game-intro container">
                 <h1 class="hero">Rock Paper Scissors Lizard Spock</h1>
 
-                <div class="tenor-gif-embed" data-postid="14859572" data-share-method="host" data-width="100%" data-aspect-ratio="1.7785714285714287">
+                <div class="tenor-gif-embed" data-postid="14859572" data-share-method="host" data-width="90%" data-aspect-ratio="1.7785714285714287">
                     <a href="https://tenor.com/view/tv-shows-the-big-bang-theory-tbbt-rock-paper-scissor-lizard-spock-rock-gif-14859572">Tv Shows The Big Bang Theory GIF</a> from <a href="https://tenor.com/search/tvshows-gifs">Tvshows GIFs</a>
                 </div>
                 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
@@ -31,38 +31,62 @@
                     </i>
                 </a>
             </section>
-            <section class="container game-main" id="game-main">
+            <main class="container game-main" id="game-main">
                 <header class="score-header">
                     <h2 class="player">You: <span class="human-score score">0</span></h2>
                     <h2 class="player">Computer: <span class="computer-score score">0</span></h2>
                 </header>
                 <section class="game-wrapper">
-                    <article class="game-choices">
-                        <figure class="choice-wrapper" id="hand-rock">
-                            <img alt="Hand rock image" src="./assets/hand-rock.png">
-                            <figcaption>Rock</figcaption>
+                    <article class="game-options">
+                        <figure class="option-wrapper hand hand-rock" data-hand="Rock" data-hand-key="0">
+                            <img alt="Hand rock image" src="./assets/hand-rock.png" class="hand-rock rock hand-img">
+                            <figcaption class="hand-rock rock hand-caption">Rock</figcaption>
                         </figure>
-                        <figure class="choice-wrapper" id="hand-paper">
-                            <img alt="Hand paper image" src="./assets/hand-paper.png">
-                            <figcaption>Paper</figcaption>
+                        <figure class="option-wrapper hand hand-paper" data-hand="Paper" data-hand-key="1">
+                            <img alt="Hand paper image" src="./assets/hand-paper.png" class="hand-paper paper hand-img">
+                            <figcaption class="hand-paper paper hand-caption">Paper</figcaption>
                         </figure>
-                        <figure class="choice-wrapper" id="hand-scissor">
-                            <img alt="Hand scissor image" src="./assets/hand-scissor.png">
-                            <figcaption>Scissor</figcaption>
+                        <figure class="option-wrapper hand hand-scissor" data-hand="Scissor" data-hand-key="2">
+                            <img alt="Hand scissor image" src="./assets/hand-scissor.png" class="hand-scissor scissor hand-img">
+                            <figcaption class="hand-scissor scissor hand-caption">Scissor</figcaption>
                         </figure>
-                        <figure class="choice-wrapper" id="hand-lizard">
-                            <img alt="Hand lizard image" src="./assets/hand-lizard.png">
-                            <figcaption>Lizard</figcaption>
+                        <figure class="option-wrapper hand hand-lizard" data-hand="Lizard" data-hand-key="3">
+                            <img alt="Hand lizard image" src="./assets/hand-lizard.png" class="hand-lizard lizard hand-img">
+                            <figcaption class="hand-lizard lizard hand-caption">Lizard</figcaption>
                         </figure>
-                        <figure class="choice-wrapper" id="hand-spock">
-                            <img alt="Hand Spock image" src="./assets/hand-spock.png">
-                            <figcaption>Spock</figcaption>
+                        <figure class="option-wrapper hand hand-spock" data-hand="Spock" data-hand-key="4">
+                            <img alt="Hand spock image" src="./assets/hand-spock.png" class="hand-spock spock hand-img">
+                            <figcaption class="hand-spock spock hand-caption">Spock</figcaption>
                         </figure>
                     </article>
-                    <article class="human-choice"></article>
-                    <article class="computer-choice"></article>
+                    <article class="loading-gif display-none">
+                        <img src="./assets/loading-gif.gif" width="150">
+                        <p class="loading-text">Loading Computer Choice...</p>
+                    </article>
+                    <article class="game-choice display-none">
+                        <figure class="human-choice-wrapper">
+                            <h3 class="">You</h3>
+                            <img class="human-choice"/>
+                            <figcaption class="human-choice-value"></figcaption>
+                        </figure>
+                        <article class="game-result display-none">
+                            <p class="result-text"></p>
+                            <h1 class="winner-text"></h1>
+                        </article>
+                        <figure class="computer-choice-wrapper">
+                            <h3 class="">Computer: </h3>
+                            <img class="computer-choice"/>
+                            <figcaption class="computer-choice-value"></figcaption>
+                        </figure>
+                    </article>
+                    <article class="tournament-result">
+                        <h2 class="tournament-score"></h2>
+
+                        <button class="btn-primary btn btn-play-again display-none">Play Again</button>
+                    </article>
                 </section>
-            </section>
-        </main>        
+            </main>
+        </div>   
+        <script src="./script.js"></script>     
     </body>
 </html>
