@@ -151,7 +151,7 @@ function declareWinner(humanChoiceHand, computerChoiceHand) {
             break;
 
         case 'PaperRock':
-            winText = 'You Wins!';
+            winText = 'You Win!';
             resText = "Paper Covers Rock";
             break;
         
