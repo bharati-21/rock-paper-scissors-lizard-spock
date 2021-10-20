@@ -92,6 +92,8 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
     gameChoice.classList.remove('display-none');
     gameChoice.classList.add('display-block');
 
+
+    loadingGif.scrollIntoView();
     loadingGif.classList.remove('display-none');
     loadingGif.classList.add('display-block');
         
