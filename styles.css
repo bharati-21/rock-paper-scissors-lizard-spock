@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    background: var(--background-color) url("https://wallpapercave.com/wp/nh9U4Hu.png") no-repeat  center/ cover;
+    background: #000 url("https://wallpapercave.com/wp/nh9U4Hu.png") no-repeat  center/ cover;
     background-attachment: fixed;
     color: #fff;
     display: flex;
@@ -71,8 +71,8 @@ h1.hero {
     margin-bottom: 2rem;
     text-align: center;
     font-size: 2rem;
-    color: var(--shadow-color);
-    text-shadow: 3px 1px var(--other-color);
+    color: var(--other-color);
+    text-shadow: 1px 1px var(--shadow-color);
 }
 
 .tenor-gif-embed {
@@ -98,12 +98,12 @@ h1.hero {
 }
 
 .btn.btn-secondary {
-    background-color: var(--shadow-color);
+    background-color: #810303;
     color: var(--other-color);
 }
 
 .btn-primary {
-    color: var(--shadow-color);
+    color: #810303;
     background-color: var(--background-color)
 }
 
@@ -126,7 +126,7 @@ h1.hero {
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
-    background-color: #810303;
+    background-color: #740b0b;
 }
 
 .game-wrapper {
@@ -212,9 +212,7 @@ h2 {
 }
 
 
-
-
-.option-wrapper img, .game-choice img{
+.option-wrapper img, .game-choice figure img{
     width: 4rem;
     height: 4rem;
 }
@@ -245,7 +243,7 @@ h2 {
     text-align: center;
 }
 
-.loading-gif.display-block > img {
+.loading-gif.display-block  img {
     animation: animateDisplay 2s infinite alternate ease-in-out;
     -webkit-animation: animateDisplay 2s infinite alternate ease-in-out;
 }
@@ -391,8 +389,12 @@ h2 {
 }
 
 @media screen and (max-width:768px) {
-    .game-options, .game-choice {
+    .game-options {
         justify-content: center;
+    }
+
+    .game-choice {
+        flex-direction: column;
     }
 }
 
