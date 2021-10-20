@@ -90,8 +90,8 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
     gameChoice.classList.remove('display-none');
     gameChoice.classList.add('display-block');
 
-    // gameChoice.scrollIntoView();
-    loadingGif.scrollIntoView();
+    gameChoice.scrollIntoView();
+    loadingGif.scrollTop = gameChoice.offsetTop;
 
     loadingGif.classList.remove('display-none');
     loadingGif.classList.add('display-block');
