@@ -91,6 +91,7 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
     gameChoice.classList.add('display-block');
 
     gameChoice.scrollIntoView();
+    loadingGif.scrollIntoView();
 
     loadingGif.classList.remove('display-none');
     loadingGif.classList.add('display-block');
@@ -101,9 +102,6 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
         loadingGif.classList.add('display-none');
 
         const [resText, winText] = declareWinner(humanChoiceHand, computerChoiceHand);
-
-
-
 
         resultText.innerText = resText;
         winnerText.innerText = winText;
