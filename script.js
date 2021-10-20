@@ -63,7 +63,6 @@ function handleOptionsClick(e) {
 
         gameResult.classList.remove('display-block');
         gameResult.classList.add('display-none');
-        gameResult.scrollIntoView();
 
         const humanChoiceKey = target.getAttribute('data-hand-key');
         const humanChoiceHand = gameChoices[humanChoiceKey].hand;
@@ -93,7 +92,7 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
     gameChoice.classList.add('display-block');
 
 
-    loadingGif.scrollIntoView();
+    gameResult.scrollIntoView();
     loadingGif.classList.remove('display-none');
     loadingGif.classList.add('display-block');
         
