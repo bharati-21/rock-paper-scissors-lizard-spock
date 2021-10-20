@@ -91,11 +91,11 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
     gameChoice.classList.add('display-block');
 
     gameChoice.scrollIntoView();
-    loadingGif.scrollIntoView(true, {behavior: "smooth"});
    
     loadingGif.classList.remove('display-none');
     loadingGif.classList.add('display-block');
-        
+    loadingGif.scrollIntoView(true);
+
        
     setTimeout(()=>{
         loadingGif.classList.remove('display-block');
