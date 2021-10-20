@@ -16,7 +16,7 @@ const winnerText = document.querySelector('.winner-text');
 const humanScore = document.querySelector('.human-score');
 const computerScore = document.querySelector('.computer-score');
 
-
+const tournamentResult = document.querySelector('.tournament-result');
 const tournamentWinner = document.querySelector('.tournament-score');
 const btnPlayAgain = document.querySelector('.btn-play-again');
 
@@ -57,13 +57,13 @@ function handleOptionsClick(e) {
             gameWrapper.classList.add('no-pointer-events');
         });
 
-        loadingGif.classList.remove('display-none');
-        loadingGif.classList.add('display-block');
+       
         gameChoice.classList.add('display-none');
         gameChoice.classList.remove('display-block');
 
         gameResult.classList.remove('display-block');
         gameResult.classList.add('display-none');
+        gameResult.scrollIntoView();
 
         const humanChoiceKey = target.getAttribute('data-hand-key');
         const humanChoiceHand = gameChoices[humanChoiceKey].hand;
@@ -82,20 +82,27 @@ function setComputerChoice() {
 }
 
 function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, computerChoiceHand) {
+
+    humanChoice.setAttribute('src', humanChoiceImage);
+    computerChoice.setAttribute('src', computerChoiceImage);
+
+    humanChoiceValue.innerText = humanChoiceHand;
+    computerChoiceValue.innerText = computerChoiceHand;
+
+    gameChoice.classList.remove('display-none');
+    gameChoice.classList.add('display-block');
+
+    loadingGif.classList.remove('display-none');
+    loadingGif.classList.add('display-block');
+        
+       
     setTimeout(()=>{
         loadingGif.classList.remove('display-block');
         loadingGif.classList.add('display-none');
 
-        humanChoice.setAttribute('src', humanChoiceImage);
-        computerChoice.setAttribute('src', computerChoiceImage);
-
-        humanChoiceValue.innerText = humanChoiceHand;
-        computerChoiceValue.innerText = computerChoiceHand;
-
-        gameChoice.classList.remove('display-none');
-        gameChoice.classList.add('display-block');
-
         const [resText, winText] = declareWinner(humanChoiceHand, computerChoiceHand);
+
+
 
 
         resultText.innerText = resText;
@@ -110,6 +117,8 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
         else if(winText.includes('You')) {
             ++humScore;
         }
+
+        tournamentResult.scrollIntoView();
 
         computerScore.innerText = compScore;
         humanScore.innerText = humScore;
@@ -133,9 +142,7 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
                 gameWrapper.classList.remove('current-option');
                 gameWrapper.classList.remove('no-pointer-events');
             });
-        }
-
-        
+        }   
     }, 3000);
     console.log(gameChoice);
 }
