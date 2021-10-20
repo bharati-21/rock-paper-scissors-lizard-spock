@@ -263,4 +263,7 @@ gameOptionsWrapper.forEach(gameWrapper => {
     gameWrapper.addEventListener('click' , handleOptionsClick);
 });
 
-btnPlayAgain.addEventListener('click', () => location.reload())
+btnPlayAgain.addEventListener('click', () => {
+    window.location.replace("https://bbt-rock-paper-scissors-lizard-spock.netlify.app")
+
+});
