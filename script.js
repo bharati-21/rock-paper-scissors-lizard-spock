@@ -57,7 +57,8 @@ function handleOptionsClick(e) {
             gameWrapper.classList.add('no-pointer-events');
         });
 
-       
+        gameChoice.scrollIntoView();
+
         gameChoice.classList.add('display-none');
         gameChoice.classList.remove('display-block');
 
@@ -92,7 +93,6 @@ function setImageSrc(humanChoiceImage, humanChoiceHand,computerChoiceImage, comp
     gameChoice.classList.add('display-block');
 
 
-    gameResult.scrollIntoView();
     loadingGif.classList.remove('display-none');
     loadingGif.classList.add('display-block');
         
